@@ -1,0 +1,51 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Pemesanan Tiket Konser</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <header>  
+        <h1>Pemesanan Tiket Konser</h1>  
+        <nav>  
+            <ul>  
+                <li><a href="index.html">Home</a></li>  
+                <li><a href="about.html">About</a></li>  
+                <li><a href="contact.html">Contact</a></li>  
+            </ul>  
+        </nav>  
+    </header>  
+  
+    <main>  
+        <section class="search-section">  
+            <h2>Cari Tiket Konser</h2>  
+            <input type="date" id="concertDate" />  
+            <input type="text" id="concertLocation" placeholder="Lokasi" />  
+            <input type="text" id="concertGenre" placeholder="Genre Musik" />  
+            <button onclick="searchConcerts()">Cari</button>  
+            <button onclick="getRecommendations()">Dapatkan Rekomendasi</button>  
+        </section>  
+  
+        <section class="concert-schedule" id="concertSchedule">  
+            <h2>Jadwal Konser Tersedia</h2>  
+            <div id="scheduleList">  
+                <!-- Daftar konser akan ditampilkan di sini -->  
+            </div>  
+        </section>  
+  
+        <section class="seating-chart" id="seatingChart" style="display:none;">  
+            <h2>Pilih Kursi</h2>  
+            <div id="seats"></div>  
+            <button onclick="bookTickets()">Pesan Tiket</button>  
+        </section>  
+    </main>  
+  
+    <footer>  
+        <p>&copy; 2025 Pemesanan Tiket Konser. Semua hak dilindungi.</p>  
+    </footer>  
+  
+    <script src="script.js"></script>  
+</body>  
+</html>  

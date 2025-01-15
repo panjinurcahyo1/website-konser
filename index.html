@@ -1,0 +1,83 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Pemesanan Tiket Konser</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <header>  
+        <h1>Pemesanan Tiket Konser</h1>  
+        <nav>  
+            <ul>  
+                <li><a href="index.html">Home</a></li>  
+                <li><a href="about.html">About</a></li>  
+                <li><a href="contact.html">Contact</a></li>  
+            </ul>  
+        </nav>  
+    </header>  
+  
+    <main>  
+        <section class="search-section">  
+            <h2>Cari Tiket Konser</h2>  
+            <input type="date" id="concertDate" />  
+            <input type="text" id="concertLocation" placeholder="Lokasi" />  
+            <button onclick="searchConcerts()">Cari</button>  
+        </section>  
+  
+        <section class="concert-schedule" id="concertSchedule">  
+            <h2>Jadwal Konser Tersedia</h2>  
+            <div id="scheduleList">  
+                <div class="concert-item">  
+                    <img src="assets/logo.jpg" alt="Konser Band A" />  
+                    <div class="concert-details">  
+                        <span>Konser Band A - 2025-01-20 - Jakarta</span>  
+                        <button onclick="showSeating(1)">Pilih Kursi</button>  
+                    </div>  
+                </div>  
+                <div class="concert-item">  
+                    <img src="assets/logo.jpg" alt="Konser Band B" />  
+                    <div class="concert-details">  
+                        <span>Konser Band B - 2025-01-25 - Bandung</span>  
+                        <button onclick="showSeating(2)">Pilih Kursi</button>  
+                    </div>  
+                </div>  
+                <div class="concert-item">  
+                    <img src="assets/logo.jpg" alt="Konser Band C" />  
+                    <div class="concert-details">  
+                        <span>Konser Band C - 2025-01-30 - Surabaya</span>  
+                        <button onclick="showSeating(3)">Pilih Kursi</button>  
+                    </div>  
+                </div>  
+            </div>  
+        </section>  
+  
+        <section class="seating-chart" id="seatingChart" style="display:none;">  
+            <h2>Pilih Kursi</h2>  
+            <div id="seats"></div>  
+            <button onclick="bookTickets()">Pesan Tiket</button>  
+        </section>  
+    </main>  
+  
+    <footer>  
+        <p>&copy; 2025 Pemesanan Tiket Konser. Semua hak dilindungi.</p>  
+    </footer>  
+  
+    <script src="script.js"></script>  
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67870cb1825083258e051592/1ihjoj5vt';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>  
+</html>  

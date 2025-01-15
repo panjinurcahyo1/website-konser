@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Kode QR Tiket</title>  
+    <link rel="stylesheet" href="styles.css">  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-qrcode/1.0/jquery.qrcode.min.js"></script>  
+</head>  
+<body>  
+    <header>  
+        <h1>Kode QR Tiket Anda</h1>  
+        <nav>  
+            <ul>  
+                <li><a href="index.html">Home</a></li>  
+                <li><a href="about.html">About</a></li>  
+                <li><a href="contact.html">Contact</a></li>  
+            </ul>  
+        </nav>  
+    </header>  
+  
+    <main>  
+        <h2>Berikut adalah kode QR untuk tiket Anda:</h2>  
+        <div id="qrcode" style="margin: 20px;"></div>  
+        <p>Silakan simpan kode QR ini untuk masuk ke konser.</p>  
+    </main>  
+  
+    <footer>  
+        <p>&copy; 2025 Pemesanan Tiket Konser. Semua hak dilindungi.</p>  
+    </footer>  
+  
+    <script>  
+        // Ambil kode tiket dari URL  
+        const urlParams = new URLSearchParams(window.location.search);  
+        const ticketCode = urlParams.get('code');  
+  
+        // Buat kode QR  
+        $(document).ready(function() {  
+            $('#qrcode').qrcode({  
+                text: ticketCode,  
+                width: 128, // Lebar QR Code  
+                height: 128 // Tinggi QR Code  
+            });  
+        });  
+    </script>  
+</body>  
+</html>  
