@@ -239,8 +239,19 @@ footer {
         background-color: #0056b3;  
     }
 
-    .formedit {
+.formedit {
     margin-top: 20px;
-    }
+}
+
+.tomboluhuy {
+    display: block;  
+    margin: 0 auto;  
+    padding: 3px 15px;  
+    background-color: #007bff;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}
 
 } 
