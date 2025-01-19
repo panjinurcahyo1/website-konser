@@ -181,3 +181,19 @@ footer {
 .konten {
     color: #ffffff;
 }
+
+@media (max-width: 768px) {  
+    nav {  
+        flex-direction: column; /* Mengubah arah menjadi kolom pada layar kecil */  
+        align-items: flex-start; /* Menyelaraskan item ke kiri */  
+    }  
+  
+    nav ul {  
+        flex-direction: column; /* Mengubah menu menjadi kolom */  
+        width: 100%; /* Memastikan menu mengambil lebar penuh */  
+    }  
+  
+    nav ul li {  
+        margin: 10px 0; /* Jarak antar item menu */  
+    }  
+} 
