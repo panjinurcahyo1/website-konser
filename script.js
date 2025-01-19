@@ -1,68 +1,57 @@
-// Fungsi untuk menampilkan kursi yang tersedia  
-function showSeating(concertId) {  
-    const seatingChart = document.getElementById('seatingChart');  
-    const seats = document.getElementById('seats');  
-  
-    // Clear previous seats  
-    seats.innerHTML = '';  
-  
-    // Simulasi kursi  
-    for (let i = 1; i <= 10; i++) {  
-        const seat = document.createElement('div');  
-        seat.className = 'seat';  
-        seat.innerText = i;  
-        seat.onclick = function() {  
-            seat.classList.toggle('selected');  
-        };  
-        seats.appendChild(seat);  
-    }  
-  
-    seatingChart.style.display = 'block'; // Tampilkan chart kursi  
+function selectConcert(concert) {  
+    const seatSelectionHtml = `  
+        <h1>Select Your Seat</h1>  
+        <form id="seatForm">  
+            <label for="seat">Choose your seat:</label>  
+            <select id="seat" name="seat" required>  
+                <option value="">Select a seat</option>  
+                <option value="seat1">Seat 1</option>  
+                <option value="seat2">Seat 2</option>  
+                <option value="seat3">Seat 3</option>  
+            </select>  
+            <button type="button" onclick="goToPersonalInfo()">Next</button>  
+        </form>  
+    `;  
+    document.body.innerHTML = seatSelectionHtml + document.body.innerHTML;  
 }  
   
-// Fungsi untuk memesan tiket  
-function bookTickets() {  
-    const selectedSeats = document.querySelectorAll('.seat.selected');  
-    if (selectedSeats.length > 0) {  
-        const ticketCode = 'TIKET-' + Math.random().toString(36).substr(2, 9); // Generate kode tiket  
-        window.location.href = `qr.html?code=${ticketCode}`; // Redirect ke halaman QR  
-    } else {  
-        alert('Silakan pilih kursi terlebih dahulu.');  
-    }  
+function goToPersonalInfo() {  
+    const personalInfoHtml = `  
+        <h1>Enter Your Personal Information</h1>  
+        <form id="personalInfoForm">  
+            <label for="name">Name:</label>  
+            <input type="text" id="name" name="name" required>  
+            <label for="email">Email:</label>  
+            <input type="email" id="email" name="email" required>  
+            <label for="phone">Phone Number:</label>  
+            <input type="tel" id="phone" name="phone" required>  
+            <button type="button" onclick="goToPayment()">Proceed to Payment</button>  
+        </form>  
+    `;  
+    document.body.innerHTML = personalInfoHtml + document.body.innerHTML;  
 }  
   
-// Fungsi untuk mencari konser (jika diperlukan)  
-function searchConcerts() {  
-    const date = document.getElementById('concertDate').value;  
-    const location = document.getElementById('concertLocation').value;  
-    const scheduleList = document.getElementById('scheduleList');  
+function goToPayment() {  
+    const paymentHtml = `  
+        <h1>Payment</h1>  
+        <p>Please choose your payment method:</p>  
+        <form id="paymentForm">  
+            <label for="paymentMethod">Payment Method:</label>  
+            <select id="paymentMethod" name="paymentMethod" required>  
+                <option value="">Select a payment method</option>  
+                <option value="creditCard">Credit Card</option>  
+                <option value="paypal">PayPal</option>  
+            </select>  
+            <button type="button" onclick="confirmBooking()">Confirm Payment</button>  
+        </form>  
+    `;  
+    document.body.innerHTML = paymentHtml + document.body.innerHTML;  
+}  
   
-    // Clear previous results  
-    scheduleList.innerHTML = '';  
-  
-    // Simulasi data konser  
-    const concerts = [  
-        { id: 1, name: 'Konser Band A', date: '2025-01-20', location: 'Jakarta' },  
-        { id: 2, name: 'Konser Band B', date: '2025-01-25', location: 'Bandung' },  
-        { id: 3, name: 'Konser Band C', date: '2025-01-30', location: 'Surabaya' },  
-    ];  
-  
-    // Filter konser berdasarkan tanggal dan lokasi  
-    const filteredConcerts = concerts.filter(concert => {  
-        return (!date || concert.date === date) && (!location || concert.location.toLowerCase().includes(location.toLowerCase()));  
-    });  
-  
-    // Tampilkan hasil  
-    filteredConcerts.forEach(concert => {  
-        const concertDiv = document.createElement('div');  
-        concertDiv.className = 'concert-item';  
-        concertDiv.innerHTML = `  
-            <img src="https://via.placeholder.com/150" alt="${concert.name}" />  
-            <div class="concert-details">  
-                <span>${concert.name} - ${concert.date} - ${concert.location}</span>  
-                <button onclick="showSeating(${concert.id})">Pilih Kursi</button>  
-            </div>  
-        `;  
-        scheduleList.appendChild(concertDiv);  
-    });  
+function confirmBooking() {  
+    const confirmationHtml = `  
+        <h1>Thank You for Your Purchase!</h1>  
+        <p>Your ticket has been booked successfully.</p>  
+    `;  
+    document.body.innerHTML = confirmationHtml + document.body.innerHTML;  
 }  

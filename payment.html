@@ -1,0 +1,65 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Payment</title>  
+    <link rel="stylesheet" href="styles.css">  
+
+</head>  
+<div class="container">
+<body>  
+    <nav>  
+        <ul>  
+            <li><a href="index.html">Home</a></li>  
+            <li><a href="about.html">About</a></li>  
+            <li><a href="contact.html">Contact</a></li>  
+        </ul>  
+    </nav>  
+  
+    <h1>Payment</h1>  
+    <p>Pilih Pembayaran Anda Menggunakan:</p>  
+    <form id="paymentForm">  
+        <label for="paymentMethod">Payment Method:</label>  
+        <select id="paymentMethod" name="paymentMethod" required>  
+            <option value="">Select a payment method</option>  
+            <option value="Credit Card">Credit Card</option>  
+            <option value="Gopay">Gopay</option> 
+            <option value="Qris">Qris</option>  
+ 
+        </select>  
+        <button type="button" onclick="confirmBooking()">Confirm Payment</button>  
+    </form>  
+</div>
+  
+    <script>  
+        function confirmBooking() {  
+            const paymentMethod = document.getElementById('paymentMethod').value;  
+            if (paymentMethod) {  
+                localStorage.setItem('paymentMethod', paymentMethod);  
+                window.location.href = 'confirmation.html';  
+            } else {  
+                alert('Please select a payment method.');  
+            }  
+        }  
+
+
+        
+    </script>
+      
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67870cb1825083258e051592/1ihjoj5vt';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</body>  
+</html>  

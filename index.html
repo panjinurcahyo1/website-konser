@@ -1,83 +1,77 @@
 <!DOCTYPE html>  
-<html lang="id">  
+<html lang="en">  
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Pemesanan Tiket Konser</title>  
+    <title>Concert Ticket Booking</title>  
     <link rel="stylesheet" href="styles.css">  
 </head>  
 <body>  
+    <nav>  
+        <ul class="navbar">  
+            <li><a href="index.html">Home</a></li>  
+            <li><a href="about.html">About</a></li>  
+            <li><a href="contact.html">Contact</a></li>  
+        </ul>
+    </nav>  
+  
+<div class="container">  
     <header>  
-        <h1>Pemesanan Tiket Konser</h1>  
-        <nav>  
-            <ul>  
-                <li><a href="index.html">Home</a></li>  
-                <li><a href="about.html">About</a></li>  
-                <li><a href="contact.html">Contact</a></li>  
-            </ul>  
-        </nav>  
+        <h1>Selamat datang di PTicket!</h1>  
+        <p>Booking tiket anda segera! Akses mudah ke konser impian anda!</p>  
     </header>  
-  
-    <main>  
-        <section class="search-section">  
-            <h2>Cari Tiket Konser</h2>  
-            <input type="date" id="concertDate" />  
-            <input type="text" id="concertLocation" placeholder="Lokasi" />  
-            <button onclick="searchConcerts()">Cari</button>  
-        </section>  
-  
-        <section class="concert-schedule" id="concertSchedule">  
-            <h2>Jadwal Konser Tersedia</h2>  
-            <div id="scheduleList">  
-                <div class="concert-item">  
-                    <img src="assets/logo.jpg" alt="Konser Band A" />  
-                    <div class="concert-details">  
-                        <span>Konser Band A - 2025-01-20 - Jakarta</span>  
-                        <button onclick="showSeating(1)">Pilih Kursi</button>  
-                    </div>  
-                </div>  
-                <div class="concert-item">  
-                    <img src="assets/logo.jpg" alt="Konser Band B" />  
-                    <div class="concert-details">  
-                        <span>Konser Band B - 2025-01-25 - Bandung</span>  
-                        <button onclick="showSeating(2)">Pilih Kursi</button>  
-                    </div>  
-                </div>  
-                <div class="concert-item">  
-                    <img src="assets/logo.jpg" alt="Konser Band C" />  
-                    <div class="concert-details">  
-                        <span>Konser Band C - 2025-01-30 - Surabaya</span>  
-                        <button onclick="showSeating(3)">Pilih Kursi</button>  
-                    </div>  
-                </div>  
-            </div>  
-        </section>  
-  
-        <section class="seating-chart" id="seatingChart" style="display:none;">  
-            <h2>Pilih Kursi</h2>  
-            <div id="seats"></div>  
-            <button onclick="bookTickets()">Pesan Tiket</button>  
-        </section>  
-    </main>  
+
+    <section class="concerts">  
+        <div class="concert">  
+            <img src="assets/logo.jpg" alt="Coldplay">  
+            <h3>Coldplay</h3>  
+            <p>Date: January 25, 2025</p>  
+            <p>Location: GBK Jakarta</p>  
+            <a href="select-seat.html" class="btn">Select Seats</a>  
+        </div>  
+        <div class="concert">  
+            <img src="assets/taylor.jpg" alt="Taylor Swift">  
+            <h3>Taylor Swift</h3>  
+            <p>Date: February 10, 2025</p>  
+            <p>Location: Senayan Jakarta</p>  
+            <a href="select-seat.html" class="btn">Select Seats</a>  
+        </div>  
+        <div class="concert">  
+            <img src="assets/john.jpg" alt="John Mayer">  
+            <h3>John Mayer</h3>  
+            <p>Date: March 15, 2025</p>  
+            <p>Location: GBK Jakarta</p>  
+            <a href="select-seat.html" class="btn">Select Seats</a>  
+        </div>  
+    </section>  
+</div>  
+
   
     <footer>  
-        <p>&copy; 2025 Pemesanan Tiket Konser. Semua hak dilindungi.</p>  
+        <div class="footer-content">  
+            <p>&copy; 2025 Concert Ticket Booking. All rights reserved.</p>  
+            <ul class="footer-links">  
+                <li><a href="about.html">About Us</a></li>  
+                <li><a href="contact.html">Contact</a></li>  
+                <li><a href="privacy.html">Privacy Policy</a></li>  
+                <li><a href="terms.html">Terms of Service</a></li>  
+            </ul>  
+        </div>  
     </footer>  
-  
-    <script src="script.js"></script>  
 
     <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/67870cb1825083258e051592/1ihjoj5vt';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67870cb1825083258e051592/1ihjoj5vt';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+    
 </body>  
 </html>  

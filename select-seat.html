@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Select Seat</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <div class="container">
+    <nav>  
+        <ul>  
+            <li><a href="index.html">Home</a></li>  
+            <li><a href="about.html">About</a></li>  
+            <li><a href="contact.html">Contact</a></li>  
+        </ul>  
+    </nav>  
+  
+    <h1>Pilih Kursi Anda</h1>  
+    <div class="seat-selection">  
+        <div class="seat" data-seat="CAT 1">CAT 1</div>  
+        <div class="seat" data-seat="CAT 2">CAT 2</div>  
+        <div class="seat" data-seat="CAT 3">CAT 3</div>  
+        <div class="seat" data-seat="VIP 1">VIP 1</div>  
+        <div class="seat" data-seat="VIP 2">VIP 2</div>  
+        <div class="seat" data-seat="VVIP 1">VVIP 1</div>  
+        <div class="seat" data-seat="VVIP 2">VVIP 2</div>  
+        <div class="seat" data-seat="FEST 1">FEST 1</div>  
+        <div class="seat" data-seat="FEST 2">FEST 2</div>  
+    </div>  
+    <button id="nextButton">Next</button>  
+
+</div>
+  
+    <script>  
+        const seats = document.querySelectorAll('.seat');  
+        let selectedSeat = '';  
+  
+        seats.forEach(seat => {  
+            seat.addEventListener('click', () => {  
+                // Hapus kelas 'selected' dari semua kursi  
+                seats.forEach(s => s.classList.remove('selected'));  
+                // Tambahkan kelas 'selected' ke kursi yang dipilih  
+                seat.classList.add('selected');  
+                selectedSeat = seat.getAttribute('data-seat');  
+            });  
+        });  
+  
+        document.getElementById('nextButton').addEventListener('click', () => {  
+            if (selectedSeat) {  
+                localStorage.setItem('selectedSeat', selectedSeat);  
+                window.location.href = 'personal-info.html';  
+            } else {  
+                alert('Please select a seat!');  
+            }  
+        });  
+    </script>  
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67870cb1825083258e051592/1ihjoj5vt';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->
+</body>  
+</html>  
